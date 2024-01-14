@@ -1,7 +1,7 @@
 /** @format */
 
-import "./App.css";
-import SlideInNotifications from "./SlideInNotifications.jsx";
+import "./styles/App.css";
+import SlideInNotifications from "./components/SlideInNotifications.jsx";
 
 function App() {
   return (
