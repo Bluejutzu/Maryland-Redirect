@@ -1,0 +1,95 @@
+/* src/styles/tailwind.css */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --primary: #a73e40;
+  --primary-content: #f8ecec;
+  --primary-dark: #823032;
+  --primary-light: #c15759;
+
+  --secondary: #a7763e;
+  --secondary-content: #f8f2ec;
+  --secondary-dark: #825c30;
+  --secondary-light: #c19057;
+
+  --background: #f1efef;
+  --foreground: #fbfbfb;
+  --border: #e2dddd;
+
+  --copy: #292323;
+  --copy-light: #6e5e5f;
+  --copy-lighter: #958484;
+
+  --success: #3ea73e;
+  --warning: #a7a73e;
+  --error: #a73e3e;
+  --success-content: #ecf8ec;
+  --warning-content: #000000;
+  --error-content: #f8ecec;
+}
+
+/* Customize Tailwind CSS theme with the provided color palette */
+
+@layer components {
+  .notification {
+    @apply bg-primary-dark text-primary-content;
+  }
+
+  .loading {
+    @apply bg-foreground text-copy;
+  }
+}
+
+@layer utilities {
+  .blur {
+    @apply backdrop-filter backdrop-blur-sm;
+  }
+}
+
+/* Additional styling for the homepage layout */
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, var(--background), var(--foreground));
+}
+
+h1 {
+  color: var(--primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--foreground);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.rectangle {
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 1rem;
+}
+
+.rectangle:hover {
+  transform: scale(1.05);
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
