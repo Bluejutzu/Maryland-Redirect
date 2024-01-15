@@ -1,0 +1,20 @@
+/* src/styles/background.css */
+.house-silhouette {
+  position: absolute;
+  background: #1a1a1a;
+  height: 40px;
+  width: 20px;
+  border-radius: 4px;
+}
+
+.house-1 {
+  top: 100px;
+  left: 100px;
+}
+
+.house-2 {
+  top: 200px;
+  left: 300px;
+}
+
+/* Add more houses as needed */

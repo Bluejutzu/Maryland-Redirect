@@ -3,6 +3,7 @@
 // src/components/Rectangle.js
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaWpforms } from "react-icons/fa"; // Import the form icon
 
 const Rectangle = ({ headline, imageUrl, link, applicationLink }) => {
   const [isRedirecting, setIsRedirecting] = useState(false);
@@ -17,20 +18,31 @@ const Rectangle = ({ headline, imageUrl, link, applicationLink }) => {
   return (
     <div className='position-relative'>
       <motion.div
-        className='rounded bg-primary p-4 m-4 text-light rectangle'
+        className='rounded bg-primary p-4 m-4 text-light rectangle-container'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        whileHover={{
+          scale: 1.05,
+          zIndex: 1,
+          boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
+        }}
         onClick={link ? redirectNotification : null}>
-        <div className='d-flex align-items-center'>
-          <img src={imageUrl} alt={headline} className='w-25 h-25 mr-3' />
-          <h2 className='text-2xl font-weight-bold'>{headline}</h2>
+        <div className='d-flex align-items-center justify-content-between'>
+          <div className='d-flex align-items-center'>
+            <img src={imageUrl} alt={headline} className='w-20 h-auto mr-4' />
+            <div>
+              <h2 className='text-2xl font-bold mb-2'>{headline}</h2>
+              <a
+                href={link || applicationLink}
+                className='text-blue-500 hover:underline hover:text-blue-700 flex items-center'
+                target='_blank'
+                rel='noopener noreferrer'>
+                <FaWpforms className='mr-1' />{" "}
+                {link ? "Discord Server" : "In-game Staff Application"}
+              </a>
+            </div>
+          </div>
         </div>
-        <a
-          href={link || applicationLink}
-          target='_blank'
-          rel='noopener noreferrer'>
-          {link ? "Discord Server" : "In-game Staff Application"}
-        </a>
       </motion.div>
 
       <AnimatePresence>
