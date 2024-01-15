@@ -8,12 +8,12 @@ import lcImage from "./images/Libertycounty.webp";
 
 const App = () => {
   return (
-    <div className='bg-background text-copy flex items-center justify-center h-screen'>
-      <div className='container text-center'>
-        <h1 className='text-4xl font-extrabold mb-8 text-primary'>
+    <div className='bg-light text-dark text-center'>
+      <div className='container py-5'>
+        <h1 className='display-4 font-weight-bold mb-4 text-primary'>
           Roleplay Server Home
         </h1>
-        <div className='flex flex-col items-center'>
+        <div className='d-flex flex-column align-items-center'>
           <Rectangle
             headline='Maryland State Roleplay'
             imageUrl={marylandImage}
